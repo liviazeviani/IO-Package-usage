@@ -1,12 +1,11 @@
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class ReadAFile {
 
     public static void main(String[] args)  {
+        BufferedReader keyboard =
+                new BufferedReader((new InputStreamReader(System.in)));
 
         FileReader fileReader;
         BufferedReader bufferedReader = null;
