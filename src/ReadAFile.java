@@ -8,7 +8,12 @@ public class ReadAFile {
 
         FileReader fileReader = new FileReader("Text.txt");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
-        
+
+        String line;
+        while ((line = bufferedReader.readLine()) != null){
+            System.out.println("Read: " + line);
+
+        }
 
     }
 }
