@@ -7,13 +7,24 @@ public class ReadAFile {
         BufferedReader keyboard =
                 new BufferedReader((new InputStreamReader(System.in)));
 
+        boolean success = false;
+
         FileReader fileReader;
         BufferedReader bufferedReader = null;
-        try {
-            fileReader = new FileReader("Text.txt");
-            bufferedReader = new BufferedReader(fileReader);
-        } catch (FileNotFoundException e) {
-            System.err.println("File was not found");
+        while(!success){
+            System.out.println("Enter the filename: ");
+            String filename = null;
+
+            try {
+                filename = keyboard.readLine();
+                fileReader = new FileReader(filename);
+                bufferedReader = new BufferedReader(fileReader);
+                success = true;
+            } catch (FileNotFoundException e) {
+                System.err.println("File " + filename + " was not found. Please try again!");
+            } catch (IOException e) {
+                System.err.println("Failed to read from keyboard!");
+            }
         }
 
 
